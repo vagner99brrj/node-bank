@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>node_bank - API Bancária</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f9; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        .tab-content { border: 1px solid #ccc; padding: 15px; margin-top: 15px; border-radius: 4px; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="text"], input[type="number"] { width: 90%; padding: 8px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+        button:hover { background-color: #4cae4c; }
+        .result { margin-top: 15px; padding: 10px; background-color: #e6ffe6; border: 1px solid #c8e6c9; border-radius: 4px; display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>node_bank - Sistema de Transferências</h1>
+
+        <div id="create-account" class="tab-content">
+            <h2>Abrir Nova Conta</h2>
+            <label for="ownerName">Nome do Titular:</label>
+            <input type="text" id="ownerName" placeholder="Ex: Vagner Bruno">
+
+            <label for="newAccountNumber">Número da Conta (6 dígitos):</label>
+            <input type="text" id="newAccountNumber" placeholder="Ex: 199901">
+
+            <button onclick="createAccount()">Criar Conta</button>
+            <div id="createResult" class="result"></div>
+        </div>
+
+        <div id="transfer" class="tab-content" style="margin-top: 20px;">
+            <h2>Realizar Transferência</h2>
+            
+            <label for="fromAccount">Conta de Origem:</label>
+            <input type="text" id="fromAccount" placeholder="Conta que vai enviar (Ex: 12345)">
+
+            <label for="toAccount">Conta de Destino:</label>
+            <input type="text" id="toAccount" placeholder="Conta que vai receber (Ex: 789012)">
+
+            <label for="amount">Valor da Transferência:</label>
+            <input type="number" id="amount" placeholder="Ex: 30" min="0.01">
+
+            <button onclick="transferFunds()">Transferir</button>
+            <div id="transferResult" class="result"></div>
+        </div>
+
+        </div>
+
+  <script src="script.js"></script>
+    </body>
+</html>

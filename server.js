@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 const DB_URI = process.env.MONGO_URI; 
 
 app.use(express.json()); 
+app.use(express.static('public'));
 
 const accountRoutes = require('./routes/accountRoutes');
 app.use('/api', accountRoutes);
