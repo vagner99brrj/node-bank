@@ -1,7 +1,7 @@
 # Dependências do Node
 /node_modules
 
-# Arquivo de ambiente (CONTÉM SENHAS)
+# Arquivo de ambiente 
 .env
 
 # Logs e outros
